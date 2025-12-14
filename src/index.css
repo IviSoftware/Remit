@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html, body{
+  height: calc(100% - 17.5px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  position: fixed;
+}
+
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+/*animaciones, hover y acciones de botones*/
+
+button{ background-color: #202020; }
+button:hover{
+  background-color: #303030;
+  transition: 0.1s;
+}
+button:active{
+  background-color: #404040;
+  transition: 0.1s;
+}
+
+/*-- centrado vertical y horizontal --*/
+.center-v{ display: flex; align-items: center; }
+.center-h{ display: flex; justify-content: center; }
+.center-all{ display: flex; align-items: center; justify-content: center; }
+
+.TitleBarDragAndDrop{ -webkit-app-region: drag; }
+.TitleBarButtonsDragAndDrop{ 
+	-webkit-app-region: no-drag; 
+	-webkit-user-select: none; 
+	user-select: none;
+}
