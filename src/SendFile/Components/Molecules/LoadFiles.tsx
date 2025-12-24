@@ -1,10 +1,14 @@
-import { useState, useRef } from "react";
-import { invoke } from "@tauri-apps/api/core";
+import { useState } from "react";
 import { open } from "@tauri-apps/plugin-dialog";
 
-const LoadFiles: React.FC = () => {
+interface LoadFilesProps{
+    onFileSelect: (filePath: string) => void;
+}
+
+const LoadFiles: React.FC<LoadFilesProps> = ({onFileSelect}) => {
     const [fileName, setFileName] = useState<string>("Ningún archivo seleccionado");
 
+    //función para seleccionar archivo con ruta absoluta del plugin tauri-plugin-dialog 
     const handleFileSelect = async () => {
         try{
             const selectFilePath = await open({
@@ -13,9 +17,7 @@ const LoadFiles: React.FC = () => {
             })
             if(selectFilePath){
                 setFileName(selectFilePath);
-                invoke("get_in_backend", {
-                    filePath: selectFilePath,
-                })
+                onFileSelect(selectFilePath);
             }
         }catch(error){
             console.error("Error al seleccionar el archivo:", error);

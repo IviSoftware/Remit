@@ -1,7 +1,8 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 mod backend_db;
 mod find_devices;
-mod get_in_backend;
+mod ftp_client;
+mod ftp_server;
 
 use mdns_sd::ServiceDaemon;
 use std::sync::{Arc, Mutex};
@@ -27,7 +28,8 @@ pub fn run() {
             backend_db::user_app,
             backend_db::change_username,
             find_devices::find_devices,
-            get_in_backend::get_in_backend
+            ftp_server::ftp_server,
+            ftp_client::ftp_client,
         ])
         .setup(|_app| {
             // Enable native window decorations in macOs and Linux
