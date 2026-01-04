@@ -22,3 +22,22 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Xcode
+src-tauri/gen/apple/Pods/
+src-tauri/gen/apple/*.xcworkspace
+src-tauri/gen/apple/xcuserdata/
+src-tauri/gen/apple/DerivedData/
+src-tauri/gen/apple/build/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.swiftpm/
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+
+# iOS/macOS build artifacts
+*.ipa
+*.app
+*.dSYM.zip
+*.dSYM

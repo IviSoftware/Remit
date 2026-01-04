@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "xcode": "open src-tauri/gen/apple/remit.xcodeproj",
+    "ios:build": "tauri ios build",
+    "android": "tauri android dev",
+    "android:build": "tauri android build"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
